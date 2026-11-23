@@ -8,12 +8,12 @@
   </defs>
 
   <style>
-    @keyframes pulseAi {
-      0%, 100% { transform: translateY(0px); opacity: 0.9; }
-      50% { transform: translateY(-2px); opacity: 1; }
+    @keyframes aiBorderPulse {
+      0%, 100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 1; }
     }
-    .badge-col {
-      animation: pulseAi 3s ease-in-out infinite;
+    .ai-badge-rect {
+      animation: aiBorderPulse 3s ease-in-out infinite;
     }
   </style>
 
@@ -25,53 +25,53 @@
     CROSS-COMPATIBLE AI RUNTIMES &amp; ENVIRONMENTS
   </text>
 
-  <!-- Badge Row -->
-  <g class="badge-col" transform="translate(18, 42)">
+  <!-- Badge Row (Positioned directly with static translation) -->
+  <g transform="translate(18, 42)">
     <!-- Claude -->
     <g transform="translate(0, 0)">
-      <rect width="96" height="34" rx="8" fill="#131b2e" stroke="#d97706" stroke-width="1" />
+      <rect width="96" height="34" rx="8" fill="#131b2e" stroke="#d97706" stroke-width="1" class="ai-badge-rect" />
       <text x="48" y="22" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Claude Code</text>
     </g>
 
     <!-- ChatGPT -->
     <g transform="translate(106, 0)">
-      <rect width="94" height="34" rx="8" fill="#131b2e" stroke="#10b981" stroke-width="1" />
+      <rect width="94" height="34" rx="8" fill="#131b2e" stroke="#10b981" stroke-width="1" class="ai-badge-rect" />
       <text x="47" y="22" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">ChatGPT</text>
     </g>
 
     <!-- Cursor -->
     <g transform="translate(210, 0)">
-      <rect width="84" height="34" rx="8" fill="#131b2e" stroke="#3b82f6" stroke-width="1" />
+      <rect width="84" height="34" rx="8" fill="#131b2e" stroke="#3b82f6" stroke-width="1" class="ai-badge-rect" />
       <text x="42" y="22" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Cursor</text>
     </g>
 
     <!-- Gemini / Antigravity -->
     <g transform="translate(304, 0)">
-      <rect width="138" height="34" rx="8" fill="#131b2e" stroke="#00d9f5" stroke-width="1" />
+      <rect width="138" height="34" rx="8" fill="#131b2e" stroke="#00d9f5" stroke-width="1" class="ai-badge-rect" />
       <text x="69" y="22" fill="#00d9f5" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Gemini / AGY</text>
     </g>
 
     <!-- Windsurf -->
     <g transform="translate(452, 0)">
-      <rect width="94" height="34" rx="8" fill="#131b2e" stroke="#06b6d4" stroke-width="1" />
+      <rect width="94" height="34" rx="8" fill="#131b2e" stroke="#06b6d4" stroke-width="1" class="ai-badge-rect" />
       <text x="47" y="22" fill="#67e8f9" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Windsurf</text>
     </g>
 
     <!-- Manus / Cline -->
     <g transform="translate(556, 0)">
-      <rect width="112" height="34" rx="8" fill="#131b2e" stroke="#a855f7" stroke-width="1" />
+      <rect width="112" height="34" rx="8" fill="#131b2e" stroke="#a855f7" stroke-width="1" class="ai-badge-rect" />
       <text x="56" y="22" fill="#d8b4fe" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Manus / Cline</text>
     </g>
 
     <!-- Copilot -->
     <g transform="translate(678, 0)">
-      <rect width="80" height="34" rx="8" fill="#131b2e" stroke="#6366f1" stroke-width="1" />
+      <rect width="80" height="34" rx="8" fill="#131b2e" stroke="#6366f1" stroke-width="1" class="ai-badge-rect" />
       <text x="40" y="22" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Copilot</text>
     </g>
 
     <!-- Ollama / Local -->
     <g transform="translate(768, 0)">
-      <rect width="76" height="34" rx="8" fill="#131b2e" stroke="#ec4899" stroke-width="1" />
+      <rect width="76" height="34" rx="8" fill="#131b2e" stroke="#ec4899" stroke-width="1" class="ai-badge-rect" />
       <text x="38" y="22" fill="#f472b6" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Ollama</text>
     </g>
   </g>

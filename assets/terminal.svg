@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="100%" height="360" style="background:#070b12; border-radius:14px; overflow:hidden;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="100%" height="370" style="background:#070b12; border-radius:14px; overflow:hidden;">
   <defs>
     <linearGradient id="termGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0e1726" />
@@ -7,28 +7,39 @@
   </defs>
 
   <style>
-    @keyframes lineFadeIn {
-      0% { opacity: 0; transform: translateY(4px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    /* Continuous 12-Second Execution Loop */
+    @keyframes kLine1 { 0%, 5% { opacity: 0; } 8%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine2 { 0%, 12% { opacity: 0; } 16%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine3 { 0%, 22% { opacity: 0; } 26%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine4 { 0%, 32% { opacity: 0; } 36%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine5 { 0%, 42% { opacity: 0; } 46%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine6 { 0%, 52% { opacity: 0; } 56%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine7 { 0%, 62% { opacity: 0; } 66%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine8 { 0%, 72% { opacity: 0; } 76%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes kLine9 { 0%, 82% { opacity: 0; } 86%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    
     @keyframes cursorBlink {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      50% { opacity: 0.1; }
     }
-    .l1 { animation: lineFadeIn 0.5s ease-out 0.2s forwards; opacity: 0; }
-    .l2 { animation: lineFadeIn 0.5s ease-out 0.8s forwards; opacity: 0; }
-    .l3 { animation: lineFadeIn 0.5s ease-out 1.5s forwards; opacity: 0; }
-    .l4 { animation: lineFadeIn 0.5s ease-out 2.2s forwards; opacity: 0; }
-    .l5 { animation: lineFadeIn 0.5s ease-out 2.9s forwards; opacity: 0; }
-    .l6 { animation: lineFadeIn 0.5s ease-out 3.6s forwards; opacity: 0; }
-    .l7 { animation: lineFadeIn 0.5s ease-out 4.3s forwards; opacity: 0; }
-    .l8 { animation: lineFadeIn 0.5s ease-out 5.0s forwards; opacity: 0; }
-    .l9 { animation: lineFadeIn 0.5s ease-out 5.7s forwards; opacity: 0; }
-    .cursor { animation: cursorBlink 1s infinite 5.7s; }
+
+    .tl-1 { animation: kLine1 12s infinite; }
+    .tl-2 { animation: kLine2 12s infinite; }
+    .tl-3 { animation: kLine3 12s infinite; }
+    .tl-4 { animation: kLine4 12s infinite; }
+    .tl-5 { animation: kLine5 12s infinite; }
+    .tl-6 { animation: kLine6 12s infinite; }
+    .tl-7 { animation: kLine7 12s infinite; }
+    .tl-8 { animation: kLine8 12s infinite; }
+    .tl-9 { animation: kLine9 12s infinite; }
+    
+    .cursor-prompt {
+      animation: cursorBlink 0.8s infinite ease-in-out;
+    }
   </style>
 
   <!-- Terminal Window Background -->
-  <rect width="880" height="360" fill="url(#termGrad)" rx="14" stroke="#1f293d" stroke-width="1.5" />
+  <rect width="880" height="370" fill="url(#termGrad)" rx="14" stroke="#1f293d" stroke-width="1.5" />
 
   <!-- Window Header Bar -->
   <rect width="880" height="38" fill="#111c2e" rx="14" />
@@ -45,71 +56,69 @@
     agent@antigravity: ~/skills/ctf-challenge-tracker (zsh)
   </text>
 
-  <!-- Terminal Output Lines -->
-  <g font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="12.5" xml:space="preserve">
-    <!-- Command Invocation -->
-    <g class="l1" transform="translate(28, 70)">
-      <text fill="#00d9f5" font-weight="700">agent</text>
-      <text x="45" fill="#64748b">on</text>
-      <text x="65" fill="#c084fc">main</text>
-      <text x="105" fill="#f8fafc">❯ ctf-tracker --discover --verify --timezone Asia/Kolkata --cadence 3h</text>
-    </g>
+  <!-- Line 1: Command Invocation (y = 70) -->
+  <g class="tl-1" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5">
+    <text x="28" y="70" fill="#00d9f5" font-weight="700">agent</text>
+    <text x="75" y="70" fill="#64748b">on</text>
+    <text x="96" y="70" fill="#c084fc">main</text>
+    <text x="135" y="70" fill="#f8fafc">❯ ctf-tracker --discover --verify --region IN --cadence 3h</text>
+  </g>
 
-    <!-- Source Registry Lookup -->
-    <g class="l2" transform="translate(28, 100)">
-      <text fill="#64748b">[00:00:01]</text>
-      <text x="80" fill="#38bdf8">ℹ [REGISTRY]</text>
-      <text x="180" fill="#94a3b8">Scanning verified sources: CTFtime, Devpost, MLH, HackerOne, Company Feeds...</text>
-    </g>
+  <!-- Line 2: Source Registry (y = 100) -->
+  <g class="tl-2" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="100" fill="#64748b">[00:00:01]</text>
+    <text x="110" y="100" fill="#38bdf8" font-weight="700">ℹ [REGISTRY]</text>
+    <text x="215" y="100" fill="#94a3b8">Querying CTFtime, Devpost, MLH, HackerOne, Company Feeds... (4 sources)</text>
+  </g>
 
-    <!-- Candidate Discovery -->
-    <g class="l3" transform="translate(28, 130)">
-      <text fill="#64748b">[00:00:03]</text>
-      <text x="80" fill="#00f5a0">✔ [DISCOVER]</text>
-      <text x="180" fill="#e2e8f0">Extracted <tspan fill="#00f5a0" font-weight="700">32 candidate events</tspan> matching active 30-day time window</text>
-    </g>
+  <!-- Line 3: Candidate Discovery (y = 130) -->
+  <g class="tl-3" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="130" fill="#64748b">[00:00:03]</text>
+    <text x="110" y="130" fill="#00f5a0" font-weight="700">✔ [DISCOVER]</text>
+    <text x="215" y="130" fill="#e2e8f0">Extracted <tspan fill="#00f5a0" font-weight="700">32 candidate events</tspan> matching active 30-day time window</text>
+  </g>
 
-    <!-- Verification Phase -->
-    <g class="l4" transform="translate(28, 160)">
-      <text fill="#64748b">[00:00:05]</text>
-      <text x="80" fill="#fbbf24">⚡ [VERIFY]</text>
-      <text x="180" fill="#e2e8f0">Probing official endpoints &amp; registration URLs (HTTP 200 / TLS valid)</text>
-    </g>
+  <!-- Line 4: Verification Phase (y = 160) -->
+  <g class="tl-4" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="160" fill="#64748b">[00:00:05]</text>
+    <text x="110" y="160" fill="#fbbf24" font-weight="700">⚡ [VERIFY]</text>
+    <text x="215" y="160" fill="#e2e8f0">Probing official endpoints &amp; registration URLs (HTTP 200 / TLS valid)</text>
+  </g>
 
-    <!-- Rejection & Deduplication -->
-    <g class="l5" transform="translate(28, 190)">
-      <text fill="#64748b">[00:00:06]</text>
-      <text x="80" fill="#f43f5e">⚠ [FILTER]</text>
-      <text x="180" fill="#94a3b8">Pruned 6 duplicates &amp; 2 expired/closed contests. Recorded evidence logs.</text>
-    </g>
+  <!-- Line 5: Rejection & Deduplication (y = 190) -->
+  <g class="tl-5" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="190" fill="#64748b">[00:00:06]</text>
+    <text x="110" y="190" fill="#f43f5e" font-weight="700">⚠ [FILTER]</text>
+    <text x="215" y="190" fill="#94a3b8">Pruned 6 duplicates &amp; 2 expired/closed contests. Recorded evidence logs.</text>
+  </g>
 
-    <!-- Regional & Timezone Normalization -->
-    <g class="l6" transform="translate(28, 220)">
-      <text fill="#64748b">[00:00:07]</text>
-      <text x="80" fill="#c084fc">🌐 [REGION]</text>
-      <text x="180" fill="#e2e8f0">Timezone normalized to <tspan fill="#38bdf8">Asia/Kolkata (UTC+05:30)</tspan> • 21 joinable online</text>
-    </g>
+  <!-- Line 6: Regional & Timezone Normalization (y = 220) -->
+  <g class="tl-6" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="220" fill="#64748b">[00:00:07]</text>
+    <text x="110" y="220" fill="#c084fc" font-weight="700">🌐 [REGION]</text>
+    <text x="215" y="220" fill="#e2e8f0">Timezone normalized to <tspan fill="#38bdf8">Asia/Kolkata (UTC+05:30)</tspan> • 21 joinable online</text>
+  </g>
 
-    <!-- Schema Validation -->
-    <g class="l7" transform="translate(28, 250)">
-      <text fill="#64748b">[00:00:08]</text>
-      <text x="80" fill="#00f5a0">✔ [SCHEMA]</text>
-      <text x="180" fill="#e2e8f0">Payload strictly validated against <tspan fill="#00d9f5">references/event-schema.json</tspan></text>
-    </g>
+  <!-- Line 7: Schema Validation (y = 250) -->
+  <g class="tl-7" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="250" fill="#64748b">[00:00:08]</text>
+    <text x="110" y="250" fill="#00f5a0" font-weight="700">✔ [SCHEMA]</text>
+    <text x="215" y="250" fill="#e2e8f0">Payload strictly validated against <tspan fill="#00d9f5">references/event-schema.json</tspan></text>
+  </g>
 
-    <!-- Dashboard Generation Output -->
-    <g class="l8" transform="translate(28, 280)">
-      <text fill="#64748b">[00:00:09]</text>
-      <text x="80" fill="#00f5a0">★ [DASHBOARD]</text>
-      <text x="180" fill="#00f5a0" font-weight="700">Compiled standalone ctf_dashboard.html (24 verified events)</text>
-    </g>
+  <!-- Line 8: Dashboard Generation Output (y = 280) -->
+  <g class="tl-8" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="280" fill="#64748b">[00:00:09]</text>
+    <text x="110" y="280" fill="#00f5a0" font-weight="700">★ [DASHBOARD]</text>
+    <text x="215" y="280" fill="#00f5a0" font-weight="700">Compiled standalone ctf_dashboard.html (24 verified events, $165k+ pool)</text>
+  </g>
 
-    <!-- Next Cadence -->
-    <g class="l9" transform="translate(28, 312)">
-      <text fill="#64748b">[00:00:09]</text>
-      <text x="80" fill="#38bdf8">⏳ [SCHEDULE]</text>
-      <text x="180" fill="#94a3b8">Next automated refresh armed for 03:00:00 UTC (Cadence: 3h) </text>
-      <rect class="cursor" x="655" y="-12" width="8" height="15" fill="#00f5a0" />
-    </g>
+  <!-- Line 9: Next Cadence Standing By (y = 312) -->
+  <g class="tl-9" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">
+    <text x="28" y="312" fill="#64748b">[00:00:09]</text>
+    <text x="110" y="312" fill="#38bdf8" font-weight="700">⏳ [SCHEDULE]</text>
+    <text x="215" y="312" fill="#94a3b8">Next automated refresh armed for 03:00:00 UTC (Cadence: 3h)</text>
+    <!-- Blinking Block Cursor -->
+    <rect class="cursor-prompt" x="726" y="300" width="8" height="15" fill="#00f5a0" />
   </g>
 </svg>

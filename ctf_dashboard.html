@@ -242,6 +242,17 @@
       margin-bottom: 32px;
     }
 
+    @keyframes cardEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .kpi-card {
       background: var(--bg-card);
       border: 1px solid var(--border-default);
@@ -249,6 +260,7 @@
       padding: 20px;
       position: relative;
       overflow: hidden;
+      animation: cardEntrance 0.35s ease-out both;
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -662,6 +674,7 @@
       justify-content: space-between;
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
+      animation: cardEntrance 0.3s ease-out both;
     }
 
     .event-card:hover {
@@ -1264,7 +1277,7 @@
     <!-- Footer -->
     <footer class="dashboard-footer">
       <div class="footer-left">
-        <span>Generated: <strong style="color: var(--text-primary);">2026-11-23 17:54:57 UTC</strong></span>
+        <span>Generated: <strong style="color: var(--text-primary);">2026-11-23 18:02:02 UTC</strong></span>
         <span>•</span>
         <span>Timezone: <strong style="color: var(--text-primary);">Asia/Kolkata</strong></span>
         <span>•</span>

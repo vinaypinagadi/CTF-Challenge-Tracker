@@ -360,6 +360,17 @@ def main():
       margin-bottom: 32px;
     }}
 
+    @keyframes cardEntrance {{
+      from {{
+        opacity: 0;
+        transform: translateY(6px);
+      }}
+      to {{
+        opacity: 1;
+        transform: translateY(0);
+      }}
+    }}
+
     .kpi-card {{
       background: var(--bg-card);
       border: 1px solid var(--border-default);
@@ -367,6 +378,7 @@ def main():
       padding: 20px;
       position: relative;
       overflow: hidden;
+      animation: cardEntrance 0.35s ease-out both;
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }}
 
@@ -780,6 +792,7 @@ def main():
       justify-content: space-between;
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
+      animation: cardEntrance 0.3s ease-out both;
     }}
 
     .event-card:hover {{
