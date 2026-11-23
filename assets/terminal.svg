@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="100%" height="360" style="background:#070b12; border-radius:14px; overflow:hidden;">
+  <defs>
+    <linearGradient id="termGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1726" />
+      <stop offset="100%" stop-color="#070b12" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes lineFadeIn {
+      0% { opacity: 0; transform: translateY(4px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .l1 { animation: lineFadeIn 0.5s ease-out 0.2s forwards; opacity: 0; }
+    .l2 { animation: lineFadeIn 0.5s ease-out 0.8s forwards; opacity: 0; }
+    .l3 { animation: lineFadeIn 0.5s ease-out 1.5s forwards; opacity: 0; }
+    .l4 { animation: lineFadeIn 0.5s ease-out 2.2s forwards; opacity: 0; }
+    .l5 { animation: lineFadeIn 0.5s ease-out 2.9s forwards; opacity: 0; }
+    .l6 { animation: lineFadeIn 0.5s ease-out 3.6s forwards; opacity: 0; }
+    .l7 { animation: lineFadeIn 0.5s ease-out 4.3s forwards; opacity: 0; }
+    .l8 { animation: lineFadeIn 0.5s ease-out 5.0s forwards; opacity: 0; }
+    .l9 { animation: lineFadeIn 0.5s ease-out 5.7s forwards; opacity: 0; }
+    .cursor { animation: cursorBlink 1s infinite 5.7s; }
+  </style>
+
+  <!-- Terminal Window Background -->
+  <rect width="880" height="360" fill="url(#termGrad)" rx="14" stroke="#1f293d" stroke-width="1.5" />
+
+  <!-- Window Header Bar -->
+  <rect width="880" height="38" fill="#111c2e" rx="14" />
+  <rect y="26" width="880" height="12" fill="#111c2e" />
+  <line x1="0" y1="38" x2="880" y2="38" stroke="#1f293d" stroke-width="1" />
+
+  <!-- Traffic Lights -->
+  <circle cx="24" cy="19" r="6" fill="#ff5f56" />
+  <circle cx="44" cy="19" r="6" fill="#ffbd2e" />
+  <circle cx="64" cy="19" r="6" fill="#27c93f" />
+
+  <!-- Terminal Window Title -->
+  <text x="440" y="24" fill="#64748b" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" text-anchor="middle">
+    agent@antigravity: ~/skills/ctf-challenge-tracker (zsh)
+  </text>
+
+  <!-- Terminal Output Lines -->
+  <g font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="12.5" xml:space="preserve">
+    <!-- Command Invocation -->
+    <g class="l1" transform="translate(28, 70)">
+      <text fill="#00d9f5" font-weight="700">agent</text>
+      <text x="45" fill="#64748b">on</text>
+      <text x="65" fill="#c084fc">main</text>
+      <text x="105" fill="#f8fafc">❯ ctf-tracker --discover --verify --timezone Asia/Kolkata --cadence 3h</text>
+    </g>
+
+    <!-- Source Registry Lookup -->
+    <g class="l2" transform="translate(28, 100)">
+      <text fill="#64748b">[00:00:01]</text>
+      <text x="80" fill="#38bdf8">ℹ [REGISTRY]</text>
+      <text x="180" fill="#94a3b8">Scanning verified sources: CTFtime, Devpost, MLH, HackerOne, Company Feeds...</text>
+    </g>
+
+    <!-- Candidate Discovery -->
+    <g class="l3" transform="translate(28, 130)">
+      <text fill="#64748b">[00:00:03]</text>
+      <text x="80" fill="#00f5a0">✔ [DISCOVER]</text>
+      <text x="180" fill="#e2e8f0">Extracted <tspan fill="#00f5a0" font-weight="700">32 candidate events</tspan> matching active 30-day time window</text>
+    </g>
+
+    <!-- Verification Phase -->
+    <g class="l4" transform="translate(28, 160)">
+      <text fill="#64748b">[00:00:05]</text>
+      <text x="80" fill="#fbbf24">⚡ [VERIFY]</text>
+      <text x="180" fill="#e2e8f0">Probing official endpoints &amp; registration URLs (HTTP 200 / TLS valid)</text>
+    </g>
+
+    <!-- Rejection & Deduplication -->
+    <g class="l5" transform="translate(28, 190)">
+      <text fill="#64748b">[00:00:06]</text>
+      <text x="80" fill="#f43f5e">⚠ [FILTER]</text>
+      <text x="180" fill="#94a3b8">Pruned 6 duplicates &amp; 2 expired/closed contests. Recorded evidence logs.</text>
+    </g>
+
+    <!-- Regional & Timezone Normalization -->
+    <g class="l6" transform="translate(28, 220)">
+      <text fill="#64748b">[00:00:07]</text>
+      <text x="80" fill="#c084fc">🌐 [REGION]</text>
+      <text x="180" fill="#e2e8f0">Timezone normalized to <tspan fill="#38bdf8">Asia/Kolkata (UTC+05:30)</tspan> • 21 joinable online</text>
+    </g>
+
+    <!-- Schema Validation -->
+    <g class="l7" transform="translate(28, 250)">
+      <text fill="#64748b">[00:00:08]</text>
+      <text x="80" fill="#00f5a0">✔ [SCHEMA]</text>
+      <text x="180" fill="#e2e8f0">Payload strictly validated against <tspan fill="#00d9f5">references/event-schema.json</tspan></text>
+    </g>
+
+    <!-- Dashboard Generation Output -->
+    <g class="l8" transform="translate(28, 280)">
+      <text fill="#64748b">[00:00:09]</text>
+      <text x="80" fill="#00f5a0">★ [DASHBOARD]</text>
+      <text x="180" fill="#00f5a0" font-weight="700">Compiled standalone ctf_dashboard.html (24 verified events)</text>
+    </g>
+
+    <!-- Next Cadence -->
+    <g class="l9" transform="translate(28, 312)">
+      <text fill="#64748b">[00:00:09]</text>
+      <text x="80" fill="#38bdf8">⏳ [SCHEDULE]</text>
+      <text x="180" fill="#94a3b8">Next automated refresh armed for 03:00:00 UTC (Cadence: 3h) </text>
+      <rect class="cursor" x="655" y="-12" width="8" height="15" fill="#00f5a0" />
+    </g>
+  </g>
+</svg>

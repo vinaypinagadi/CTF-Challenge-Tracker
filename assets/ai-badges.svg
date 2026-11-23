@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 95" width="100%" height="95" style="background:#090d16; border-radius:12px; overflow:hidden;">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5a0" />
+      <stop offset="50%" stop-color="#00d9f5" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes pulseAi {
+      0%, 100% { transform: translateY(0px); opacity: 0.9; }
+      50% { transform: translateY(-2px); opacity: 1; }
+    }
+    .badge-col {
+      animation: pulseAi 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="878" height="93" rx="12" fill="#090d16" stroke="#1e293b" stroke-width="1.2" />
+
+  <!-- Title -->
+  <text x="440" y="24" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="1.5" text-anchor="middle">
+    CROSS-COMPATIBLE AI RUNTIMES &amp; ENVIRONMENTS
+  </text>
+
+  <!-- Badge Row -->
+  <g class="badge-col" transform="translate(18, 42)">
+    <!-- Claude -->
+    <g transform="translate(0, 0)">
+      <rect width="96" height="34" rx="8" fill="#131b2e" stroke="#d97706" stroke-width="1" />
+      <text x="48" y="22" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Claude Code</text>
+    </g>
+
+    <!-- ChatGPT -->
+    <g transform="translate(106, 0)">
+      <rect width="94" height="34" rx="8" fill="#131b2e" stroke="#10b981" stroke-width="1" />
+      <text x="47" y="22" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">ChatGPT</text>
+    </g>
+
+    <!-- Cursor -->
+    <g transform="translate(210, 0)">
+      <rect width="84" height="34" rx="8" fill="#131b2e" stroke="#3b82f6" stroke-width="1" />
+      <text x="42" y="22" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Cursor</text>
+    </g>
+
+    <!-- Gemini / Antigravity -->
+    <g transform="translate(304, 0)">
+      <rect width="138" height="34" rx="8" fill="#131b2e" stroke="#00d9f5" stroke-width="1" />
+      <text x="69" y="22" fill="#00d9f5" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Gemini / AGY</text>
+    </g>
+
+    <!-- Windsurf -->
+    <g transform="translate(452, 0)">
+      <rect width="94" height="34" rx="8" fill="#131b2e" stroke="#06b6d4" stroke-width="1" />
+      <text x="47" y="22" fill="#67e8f9" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Windsurf</text>
+    </g>
+
+    <!-- Manus / Cline -->
+    <g transform="translate(556, 0)">
+      <rect width="112" height="34" rx="8" fill="#131b2e" stroke="#a855f7" stroke-width="1" />
+      <text x="56" y="22" fill="#d8b4fe" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Manus / Cline</text>
+    </g>
+
+    <!-- Copilot -->
+    <g transform="translate(678, 0)">
+      <rect width="80" height="34" rx="8" fill="#131b2e" stroke="#6366f1" stroke-width="1" />
+      <text x="40" y="22" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Copilot</text>
+    </g>
+
+    <!-- Ollama / Local -->
+    <g transform="translate(768, 0)">
+      <rect width="76" height="34" rx="8" fill="#131b2e" stroke="#ec4899" stroke-width="1" />
+      <text x="38" y="22" fill="#f472b6" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Ollama</text>
+    </g>
+  </g>
+</svg>
